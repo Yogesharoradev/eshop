@@ -1,32 +1,19 @@
-import Navbar from "./components/navbar/navbar"
-import Hero from "./components/hero/hero"
-import Category from "./components/category/category"
-import Category2 from "./components/category/category2"
-import Trust from "./components/trust/trust"
-import Banner from "./components/Banner/banner"
-import Banner2 from "./components/Banner/banner2"
-import Products from "./components/products/products"
-import Blogs from "./components/blogs/Blogs"
-import Brand from "./components/brands"
-import Footer from "./components/Footer"
-function App() {
-  
+import React from 'react'
+import { BrowserRouter as Router , Routes , Route} from "react-router-dom"
+import SignInPage from './pages/signin'
+import SignUpPage from './pages/signup'
+import HomePage from './pages/homepage'
 
+const App = () => {
   return (
-    <>
-     <Navbar/>
-     <Hero/>
-     <Category/>
-     <Category2/>
-     <Trust/>
-     <Banner/>
-     <Products/>
-     <Banner2/>
-     <Blogs/>
-     <Brand/>
-     <Footer/>
+      <Router>
+        <Routes>
+         <Route path='/' element={<HomePage />} />
+          <Route path='/signin' element={<SignInPage />} />  
+          <Route path='/signup' element={<SignUpPage />} />  
 
-    </>
+        </Routes> 
+      </Router>
   )
 }
 
